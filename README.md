@@ -11,7 +11,7 @@ Minimal flask-app with a postgreSQL database.
 
 ## 3. Run
 
-_When running the conatiner you will need to set the following environment variables:
+When running the container you will need to set the following environment variables:
 - SECRET_KEY
 You may also wish to set FLASK_CONFIG and/or FLASK_ENV variables_
 
