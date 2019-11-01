@@ -5,17 +5,13 @@ Minimal flask-app with a postgreSQL database.
 
 - Docker
 
-## 2. Build
+## 2. Build and Run
 
-`$ docker build -t flaskapp:latest .`
+Set environment variables in env_file, then:
 
-## 3. Run
+`$ docker-compose up -d`
 
-When running the container you will need to set the following environment variables:
-- SECRET_KEY
+## 3. Stop and Teardown
 
-You may also wish to set the following environment variables:
-- FLASK_CONFIG
-- FLASK_ENV
+`$ docker-compose down`
 
-`$ docker run --name flaskapp -e SECRET_KEY=hardtoguessstring -e FLASK_CONFIG=dev -e FLASK_ENV=development -p 8080:5000 flaskapp:latest`
