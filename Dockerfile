@@ -5,10 +5,9 @@ RUN adduser -D flaskapp
 WORKDIR /home/flaskapp
 
 COPY requirements.txt requirements.txt
-RUN python -m venv venv
 RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
-RUN venv/bin/pip install -r requirements.txt
-RUN venv/bin/pip install gunicorn
+RUN pip install -r requirements.txt
+RUN pip install gunicorn
 
 COPY flaskapp flaskapp
 COPY run.py config.py start.sh ./
@@ -19,5 +18,5 @@ ENV FLASK_APP run.py
 RUN chown -R flaskapp:flaskapp ./
 USER flaskapp
 
-ENTRYPOINT ["./start.sh"]
 EXPOSE 5000
+CMD ["/bin/sh", "./start.sh"]
